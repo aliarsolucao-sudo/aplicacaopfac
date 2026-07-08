@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formação Analista Comercial — ALIAR | Mude sua carreira agora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#0a0a0a;
+--bg-card:#141414;
+--bg-card-hover:#1a1a1a;
+--red-primary:#D40025;
+--red-light:#FF0040;
+--red-glow:#FF1744;
+--pink-cta:#FF0050;
+--white:#FFFFFF;
+--gray-100:#F5F5F5;
+--gray-200:#E0E0E0;
+--gray-300:#BDBDBD;
+--gray-400:#9E9E9E;
+--gray-500:#757575;
+--gray-600:#616161;
+--gray-700:#424242;
+--gray-800:#2a2a2a;
+--gray-900:#1a1a1a;
+--border-default:#2a2a2a;
+--border-selected:#FF0040;
+--font-main:'Inter',system-ui,-apple-system,sans-serif;
+--radius-sm:8px;
+--radius-md:12px;
+--radius-lg:16px;
+--radius-xl:20px;
+--shadow-card:0 4px 24px rgba(0,0,0,0.4);
+--shadow-glow:0 0 30px rgba(255,0,64,0.15);
+--transition-fast:0.2s ease;
+--transition-normal:0.3s ease;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+font-family:var(--font-main);
+background:var(--bg-primary);
+color:var(--white);
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:480px;margin:0 auto;padding:0 20px}
+.text-red{color:var(--red-light)}
+.text-gray{color:var(--gray-400)}
+.font-bold{font-weight:700}
+
+/* PROGRESS BAR */
+.progress-wrapper{
+position:sticky;top:0;z-index:100;
+background:var(--bg-primary);
+padding:12px 20px 0;
+border-bottom:1px solid var(--border-default);
+}
+.progress-bar-track{
+width:100%;height:4px;
+background:var(--gray-800);
+border-radius:99px;overflow:hidden;
+margin-bottom:12px;
+}
+.progress-bar-fill{
+height:100%;
+background:linear-gradient(90deg,var(--red-primary),var(--red-light));
+border-radius:99px;
+transition:width 0.5s cubic-bezier(.4,0,.2,1);
+width:0%;
+}
+.progress-steps{
+display:flex;justify-content:space-between;
+align-items:center;padding-bottom:12px;
+}
+.step-circle{
+width:32px;height:32px;
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+font-size:13px;font-weight:700;
+border:2px solid var(--gray-700);
+color:var(--gray-500);background:transparent;
+transition:all var(--transition-normal);
+}
+.step-circle.active{
+border-color:var(--red-light);color:var(--white);
+background:rgba(255,0,64,0.15);
+box-shadow:0 0 12px rgba(255,0,64,0.3);
+}
+.step-circle.done{
+border-color:var(--red-primary);
+background:var(--red-primary);color:var(--white);
+}
+.progress-meta{
+display:flex;justify-content:space-between;
+font-size:12px;color:var(--gray-500);
+padding-bottom:8px;
+}
+
+/* SCREENS */
+.screen{
+display:none;
+animation:fadeInUp 0.4s ease forwards;
+padding:24px 0 140px;
+}
+.screen.active{display:block}
+@keyframes fadeInUp{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* STEP HEADER */
+.step-tag{
+display:inline-block;font-size:11px;font-weight:700;
+letter-spacing:1.5px;text-transform:uppercase;
+color:var(--red-light);margin-bottom:8px;
+}
+.step-title{
+font-size:24px;font-weight:800;
+line-height:1.2;margin-bottom:8px;
+}
+.step-subtitle{
+font-size:14px;color:var(--gray-400);
+line-height:1.5;margin-bottom:24px;
+}
+
+/* RADIO OPTIONS */
+.option-list{display:flex;flex-direction:column;gap:10px}
+.option-item{
+position:relative;
+background:var(--bg-card);
+border:1.5px solid var(--border-default);
+border-radius:var(--radius-md);
+padding:16px 16px 16px 52px;
+cursor:pointer;
+transition:all var(--transition-fast);
+font-size:15px;font-weight:500;
+color:var(--gray-200);user-select:none;
+}
+.option-item:hover{border-color:var(--gray-600);background:var(--bg-card-hover)}
+.option-item.selected{
+border-color:var(--red-light);
+background:rgba(255,0,64,0.08);
+color:var(--white);
+box-shadow:var(--shadow-glow);
+}
+.option-item::before{
+content:'';position:absolute;
+left:16px;top:50%;transform:translateY(-50%);
+width:20px;height:20px;border-radius:50%;
+border:2px solid var(--gray-600);
+transition:all var(--transition-fast);
+}
+.option-item.selected::before{
+border-color:var(--red-light);
+background:var(--red-light);
+box-shadow:inset 0 0 0 4px var(--bg-card);
+}
+
+/* CHECKBOX OPTIONS */
+.checkbox-list{display:flex;flex-direction:column;gap:10px}
+.checkbox-item{
+position:relative;
+background:var(--bg-card);
+border:1.5px solid var(--border-default);
+border-radius:var(--radius-md);
+padding:16px 16px 16px 52px;
+cursor:pointer;
+transition:all var(--transition-fast);
+font-size:15px;font-weight:500;
+color:var(--gray-200);user-select:none;
+}
+.checkbox-item:hover{border-color:var(--gray-600);background:var(--bg-card-hover)}
+.checkbox-item.selected{
+border-color:var(--red-light);
+background:rgba(255,0,64,0.08);
+color:var(--white);
+box-shadow:var(--shadow-glow);
+}
+.checkbox-item::before{
+content:'';position:absolute;
+left:16px;top:50%;transform:translateY(-50%);
+width:20px;height:20px;border-radius:6px;
+border:2px solid var(--gray-600);
+transition:all var(--transition-fast);
+}
+.checkbox-item.selected::before{
+border-color:var(--red-light);
+background:var(--red-light);
+}
+.checkbox-item.selected::after{
+content:'✓';position:absolute;
+left:20px;top:50%;transform:translateY(-50%);
+font-size:13px;font-weight:800;color:var(--white);
+}
+
+/* FORM FIELDS */
+.form-group{margin-bottom:20px}
+.form-label{
+display:block;font-size:14px;font-weight:600;
+margin-bottom:6px;color:var(--white);
+}
+.form-label .required{color:var(--red-light)}
+.form-label .optional{color:var(--gray-500);font-weight:400;font-size:12px}
+.form-input,.form-textarea,.form-select{
+width:100%;
+background:var(--bg-card);
+border:1.5px solid var(--border-default);
+border-radius:var(--radius-md);
+padding:14px 16px;
+font-size:15px;font-family:var(--font-main);
+color:var(--white);
+transition:border-color var(--transition-fast);
+outline:none;
+}
+.form-textarea{resize:vertical;min-height:100px}
+.form-select{
+appearance:none;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239E9E9E' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-position:right 16px center;
+padding-right:40px;
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--gray-600)}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--red-light)}
+.form-input.error{border-color:var(--red-light)}
+.error-msg{font-size:12px;color:var(--red-light);margin-top:4px;display:none}
+.error-msg.show{display:block}
+
+.phone-wrapper{
+display:flex;align-items:center;
+background:var(--bg-card);
+border:1.5px solid var(--border-default);
+border-radius:var(--radius-md);
+overflow:hidden;
+transition:border-color var(--transition-fast);
+}
+.phone-wrapper:focus-within{border-color:var(--red-light)}
+.phone-prefix{
+display:flex;align-items:center;gap:6px;
+padding:14px 12px;
+border-right:1px solid var(--border-default);
+font-size:14px;color:var(--gray-400);white-space:nowrap;
+}
+.phone-wrapper input{
+flex:1;background:transparent;border:none;
+padding:14px 12px;font-size:15px;
+font-family:var(--font-main);
+color:var(--white);outline:none;
+}
+.phone-wrapper input::placeholder{color:var(--gray-600)}
+
+/* RANGE SLIDER */
+.range-wrapper{margin-top:8px}
+.range-slider{
+width:100%;height:6px;
+-webkit-appearance:none;appearance:none;
+background:var(--gray-800);border-radius:99px;
+outline:none;
+}
+.range-slider::-webkit-slider-thumb{
+-webkit-appearance:none;appearance:none;
+width:28px;height:28px;border-radius:50%;
+background:var(--red-light);cursor:pointer;
+box-shadow:0 0 10px rgba(255,0,64,0.4);
+}
+.range-value{
+text-align:center;font-size:36px;
+font-weight:900;color:var(--red-light);
+margin-top:8px;
+}
+.range-labels{
+display:flex;justify-content:space-between;
+font-size:11px;color:var(--gray-500);
+margin-top:4px;
+}
+
+/* INFO BOX */
+.info-box{
+background:rgba(255,0,64,0.08);
+border:1px solid rgba(255,0,64,0.2);
+border-radius:var(--radius-md);
+padding:14px 16px;margin-bottom:24px;
+font-size:14px;line-height:1.5;color:var(--gray-200);
+}
+.info-box strong{color:var(--white)}
+
+/* SECURITY BADGE */
+.security-badge{
+display:flex;align-items:center;gap:8px;
+font-size:12px;color:var(--gray-500);margin-top:24px;
+}
+.security-badge svg{width:14px;height:14px;fill:var(--red-light)}
+
+/* BOTTOM NAV */
+.bottom-nav{
+position:fixed;bottom:0;left:0;right:0;
+background:linear-gradient(180deg,transparent 0%,var(--bg-primary) 30%);
+padding:20px 20px 28px;
+display:flex;align-items:center;justify-content:space-between;
+z-index:99;
+}
+.btn-back{
+display:flex;align-items:center;gap:6px;
+font-size:14px;font-weight:500;color:var(--gray-400);
+background:none;border:none;cursor:pointer;
+font-family:var(--font-main);
+transition:color var(--transition-fast);padding:12px 0;
+}
+.btn-back:hover{color:var(--white)}
+.btn-back svg{width:16px;height:16px;fill:currentColor}
+.btn-next{
+display:flex;align-items:center;justify-content:center;gap:8px;
+background:linear-gradient(135deg,var(--pink-cta),var(--red-light));
+color:var(--white);font-size:15px;font-weight:700;
+font-family:var(--font-main);
+text-transform:uppercase;letter-spacing:0.5px;
+border:none;border-radius:var(--radius-lg);
+padding:16px 32px;cursor:pointer;
+transition:all var(--transition-normal);
+box-shadow:0 4px 20px rgba(255,0,64,0.3);
+min-width:200px;
+}
+.btn-next:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(255,0,64,0.4)}
+.btn-next:active{transform:translateY(0)}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-next svg{width:18px;height:18px;fill:currentColor}
+
+/* LANDING PAGE */
+.landing-page{display:none;animation:fadeInUp 0.5s ease forwards}
+.landing-page.active{display:block}
+
+.hero{position:relative;padding:60px 20px 40px;text-align:center;overflow:hidden}
+.hero::before{
+content:'';position:absolute;top:0;left:0;right:0;height:300px;
+background:radial-gradient(ellipse at top center,rgba(255,0,64,0.12) 0%,transparent 70%);
+pointer-events:none;
+}
+.hero-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(255,0,64,0.1);
+border:1px solid rgba(255,0,64,0.25);
+border-radius:99px;padding:8px 18px;
+font-size:12px;font-weight:600;
+letter-spacing:1px;text-transform:uppercase;
+color:var(--red-light);margin-bottom:20px;
+}
+.hero-badge::before{
+content:'';width:8px;height:8px;border-radius:50%;
+background:var(--red-light);animation:pulse 2s infinite;
+}
+@keyframes pulse{
+0%,100%{opacity:1;transform:scale(1)}
+50%{opacity:0.5;transform:scale(1.3)}
+}
+.hero h1{font-size:32px;font-weight:900;line-height:1.15;margin-bottom:12px;position:relative}
+.hero h1 span{
+display:block;
+background:linear-gradient(135deg,var(--red-light),#FF4D6A);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:16px;color:var(--gray-400);line-height:1.6;max-width:400px;margin:0 auto 28px}
+.hero-cta{
+display:inline-flex;align-items:center;justify-content:center;gap:8px;
+background:linear-gradient(135deg,var(--pink-cta),var(--red-light));
+color:var(--white);font-size:16px;font-weight:700;
+font-family:var(--font-main);border:none;border-radius:var(--radius-lg);
+padding:18px 40px;cursor:pointer;
+transition:all var(--transition-normal);
+box-shadow:0 4px 24px rgba(255,0,64,0.35);
+text-transform:uppercase;letter-spacing:0.5px;
+}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(255,0,64,0.45)}
+
+.section{padding:48px 20px}
+.section-divider{width:60px;height:3px;background:var(--red-primary);border-radius:99px;margin:0 auto 16px}
+.section-tag{
+display:block;font-size:11px;font-weight:700;
+letter-spacing:2px;text-transform:uppercase;
+color:var(--red-light);margin-bottom:8px;text-align:center;
+}
+.section-title{font-size:24px;font-weight:800;line-height:1.2;text-align:center;margin-bottom:12px}
+.section-subtitle{
+font-size:15px;color:var(--gray-400);text-align:center;
+line-height:1.6;max-width:420px;margin:0 auto 32px;
+}
+
+.pain-card{
+background:var(--bg-card);border:1px solid var(--border-default);
+border-radius:var(--radius-md);padding:20px;margin-bottom:12px;
+display:flex;align-items:flex-start;gap:14px;
+transition:border-color var(--transition-fast);
+}
+.pain-card:hover{border-color:var(--gray-600)}
+.pain-icon{
+width:40px;height:40px;min-width:40px;
+background:rgba(255,0,64,0.1);border-radius:var(--radius-sm);
+display:flex;align-items:center;justify-content:center;
+}
+.pain-icon svg{width:20px;height:20px;fill:var(--red-light)}
+.pain-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.pain-card p{font-size:13px;color:var(--gray-400);line-height:1.5}
+
+.opportunity-banner{
+background:linear-gradient(135deg,rgba(255,0,64,0.1),rgba(255,0,64,0.02));
+border:1px solid rgba(255,0,64,0.2);border-radius:var(--radius-lg);
+padding:24px 20px;text-align:center;margin:0 20px;
+}
+.opportunity-banner h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.opportunity-banner p{font-size:14px;color:var(--gray-300);line-height:1.6}
+
+.module-card{
+background:var(--bg-card);border:1px solid var(--border-default);
+border-radius:var(--radius-lg);overflow:hidden;margin-bottom:16px;
+transition:all var(--transition-normal);
+}
+.module-card:hover{border-color:var(--gray-600)}
+.module-header{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer}
+.module-number{
+width:36px;height:36px;min-width:36px;
+background:var(--red-primary);border-radius:var(--radius-sm);
+display:flex;align-items:center;justify-content:center;
+font-size:14px;font-weight:800;color:var(--white);
+}
+.module-header h3{font-size:15px;font-weight:700;line-height:1.3;flex:1}
+.module-toggle{
+width:28px;height:28px;min-width:28px;border-radius:50%;
+background:var(--gray-800);
+display:flex;align-items:center;justify-content:center;
+transition:transform var(--transition-normal);
+}
+.module-toggle svg{width:14px;height:14px;fill:var(--gray-400);transition:transform var(--transition-normal)}
+.module-card.open .module-toggle svg{transform:rotate(180deg)}
+.module-body{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(.4,0,.2,1)}
+.module-card.open .module-body{max-height:800px}
+.module-content{padding:0 20px 20px;border-top:1px solid var(--border-default)}
+.module-desc{font-size:13px;color:var(--gray-400);line-height:1.6;padding-top:16px;margin-bottom:16px}
+.module-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.module-col h5{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red-light);margin-bottom:8px}
+.module-col ul{display:flex;flex-direction:column;gap:6px}
+.module-col li{font-size:12px;color:var(--gray-300);line-height:1.4;padding-left:12px;position:relative}
+.module-col li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--red-light)}
+
+.journey-step{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;position:relative}
+.journey-step:not(:last-child)::after{
+content:'';position:absolute;left:19px;top:42px;
+width:2px;height:calc(100% - 20px);background:var(--border-default);
+}
+.journey-num{
+width:40px;height:40px;min-width:40px;border-radius:50%;
+background:rgba(255,0,64,0.12);border:2px solid var(--red-primary);
+display:flex;align-items:center;justify-content:center;
+font-size:14px;font-weight:800;color:var(--red-light);
+position:relative;z-index:1;
+}
+.journey-step h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.journey-step p{font-size:13px;color:var(--gray-400);line-height:1.5}
+
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.diff-card{
+background:var(--bg-card);border:1px solid var(--border-default);
+border-radius:var(--radius-md);padding:20px 16px;text-align:center;
+transition:border-color var(--transition-fast);
+}
+.diff-card:hover{border-color:var(--gray-600)}
+.diff-card .diff-icon{
+width:44px;height:44px;background:rgba(255,0,64,0.1);
+border-radius:var(--radius-sm);
+display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+}
+.diff-card .diff-icon svg{width:22px;height:22px;fill:var(--red-light)}
+.diff-card h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+.diff-card p{font-size:12px;color:var(--gray-400);line-height:1.4}
+
+.result-item{
+display:flex;align-items:center;gap:14px;
+padding:14px 0;border-bottom:1px solid var(--border-default);
+}
+.result-item:last-child{border-bottom:none}
+.result-icon{
+width:36px;height:36px;min-width:36px;
+background:rgba(255,0,64,0.1);border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+}
+.result-icon svg{width:18px;height:18px;fill:var(--red-light)}
+.result-item h4{font-size:14px;font-weight:600}
+.result-item p{font-size:12px;color:var(--gray-400)}
+
+.format-card{
+background:var(--bg-card);border:1px solid var(--border-default);
+border-radius:var(--radius-lg);padding:24px 20px;margin-bottom:12px;text-align:center;
+}
+.format-card .format-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(255,0,64,0.1);border:1px solid rgba(255,0,64,0.25);
+border-radius:var(--radius-sm);padding:8px 16px;
+font-size:13px;font-weight:700;text-transform:uppercase;
+letter-spacing:1px;color:var(--red-light);margin-bottom:12px;
+}
+.format-card h3{font-size:18px;font-weight:800;margin-bottom:4px}
+.format-card p{font-size:13px;color:var(--gray-400);line-height:1.5}
+.format-features{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.format-feat{
+display:flex;align-items:center;gap:6px;
+font-size:12px;color:var(--gray-300);
+background:var(--gray-800);border-radius:99px;padding:6px 12px;
+}
+.format-feat svg{width:14px;height:14px;fill:var(--red-light)}
+
+.final-cta{text-align:center;padding:48px 20px 60px}
+.final-cta h2{font-size:24px;font-weight:800;line-height:1.2;margin-bottom:12px}
+.final-cta p{font-size:15px;color:var(--gray-400);line-height:1.6;margin-bottom:28px;max-width:380px;margin-left:auto;margin-right:auto}
+
+.footer{text-align:center;padding:20px;border-top:1px solid var(--border-default);font-size:12px;color:var(--gray-600)}
+
+@media(min-width:600px){
+.container{max-width:480px}
+.hero h1{font-size:38px}
+.section-title{font-size:28px}
+.step-title{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrapper" id="progressWrapper">
+<div class="progress-bar-track">
+  <div class="progress-bar-fill" id="progressFill"></div>
+</div>
+<div class="progress-meta">
+  <span id="stepLabel">Passo 1 de 7</span>
+  <span>~ 3 minutos</span>
+</div>
+<div class="progress-steps">
+  <div class="progress-step"><div class="step-circle active" id="circle1">1</div></div>
+  <div class="progress-step"><div class="step-circle" id="circle2">2</div></div>
+  <div class="progress-step"><div class="step-circle" id="circle3">3</div></div>
+  <div class="progress-step"><div class="step-circle" id="circle4">4</div></div>
+  <div class="progress-step"><div class="step-circle" id="circle5">5</div></div>
+  <div class="progress-step"><div class="step-circle" id="circle6">6</div></div>
+  <div class="progress-step"><div class="step-circle" id="circle7">7</div></div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- ===== STEP 1: DADOS BÁSICOS ===== -->
+<div class="screen active" id="step1">
+  <span class="step-tag">PASSO 1 DE 7 · SEUS DADOS</span>
+  <h2 class="step-title">Vamos começar.<br>Quem é você?</h2>
+  <p class="step-subtitle">Preencha seus dados básicos. Leva menos de 1 minuto. Essas informações ficam seguras com a gente.</p>
+
+  <div class="form-group">
+    <label class="form-label">Nome completo <span class="required">*</span></label>
+    <input type="text" class="form-input" id="inputName" placeholder="Seu nome completo" autocomplete="name">
+    <div class="error-msg" id="errorName">Preencha seu nome.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">WhatsApp <span class="required">*</span></label>
+    <div class="phone-wrapper">
+      <div class="phone-prefix"><span>🇧🇷</span> +55</div>
+      <input type="tel" id="inputPhone" placeholder="(11) 99999-9999" autocomplete="tel">
+    </div>
+    <div class="error-msg" id="errorPhone">Insira um número válido.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">E-mail <span class="required">*</span></label>
+    <input type="email" class="form-input" id="inputEmail" placeholder="seu@email.com" autocomplete="email">
+    <div class="error-msg" id="errorEmail">Insira um e-mail válido.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Cidade <span class="required">*</span></label>
+    <input type="text" class="form-input" id="inputCity" placeholder="Em qual cidade você mora?">
+    <div class="error-msg" id="errorCity">Preencha sua cidade.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Estado <span class="required">*</span></label>
+    <select class="form-select form-input" id="inputState">
+      <option value="" disabled selected>Selecione seu estado</option>
+      <option value="AC">Acre</option><option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option><option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option><option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option><option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option><option value="PA">Pará</option>
+      <option value="PB">Paraíba</option><option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option><option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option><option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option><option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </select>
+    <div class="error-msg" id="errorState">Selecione seu estado.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">LinkedIn <span class="optional">(opcional)</span></label>
+    <input type="url" class="form-input" id="inputLinkedin" placeholder="linkedin.com/in/seu-perfil">
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+
+<!-- ===== STEP 2: PERFIL PROFISSIONAL ===== -->
+<div class="screen" id="step2">
+  <span class="step-tag">PASSO 2 DE 7 · PERFIL PROFISSIONAL</span>
+  <h2 class="step-title">Conta pra gente:<br>o que você faz hoje?</h2>
+  <p class="step-subtitle">Não importa onde você trabalha agora. O que importa é onde você quer chegar. Seja sincero — essa informação nos ajuda a te preparar melhor.</p>
+
+  <div class="form-group">
+    <label class="form-label">Qual é o seu cargo atual? <span class="required">*</span></label>
+    <input type="text" class="form-input" id="inputCargo" placeholder="Ex: Vendedor, Atendente, Auxiliar...">
+    <div class="error-msg" id="errorCargo">Preencha seu cargo.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Em qual empresa você trabalha? <span class="required">*</span></label>
+    <input type="text" class="form-input" id="inputEmpresa" placeholder="Nome da empresa ou 'Autônomo'">
+    <div class="error-msg" id="errorEmpresa">Preencha a empresa.</div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Há quanto tempo você atua na área comercial? <span class="required">*</span></label>
+    <div class="option-list" id="optionsTempo">
+      <div class="option-item" data-value="menos1">Menos de 1 ano</div>
+      <div class="option-item" data-value="1a3">Entre 1 e 3 anos</div>
+      <div class="option-item" data-value="3a5">Entre 3 e 5 anos</div>
+      <div class="option-item" data-value="mais5">Mais de 5 anos</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Como você atua hoje? <span class="required">*</span></label>
+    <div class="option-list" id="optionsRegime">
+      <div class="option-item" data-value="clt">CLT</div>
+      <div class="option-item" data-value="pj">PJ</div>
+      <div class="option-item" data-value="empresario">Empresário</div>
+      <div class="option-item" data-value="autonomo">Autônomo</div>
+    </div>
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+<!-- ===== STEP 3: MOMENTO PROFISSIONAL ===== -->
+<div class="screen" id="step3">
+  <span class="step-tag">PASSO 3 DE 7 · SEU MOMENTO</span>
+  <h2 class="step-title">O que você quer<br>pra sua vida nos<br>próximos 12 meses?</h2>
+  <p class="step-subtitle">Seja honesto. A maioria das pessoas quer mudar, mas poucas tomam a atitude. Você está aqui — isso já diz muito sobre você.</p>
+
+  <div class="form-group">
+    <label class="form-label">Qual é o seu principal objetivo? <span class="required">*</span></label>
+    <div class="option-list" id="optionsObjetivo">
+      <div class="option-item" data-value="promocao">Conseguir uma promoção</div>
+      <div class="option-item" data-value="renda">Aumentar minha renda</div>
+      <div class="option-item" data-value="ingressar">Ingressar na área comercial</div>
+      <div class="option-item" data-value="analista">Tornar-me Analista Comercial</div>
+      <div class="option-item" data-value="negocio">Abrir meu próprio negócio</div>
+      <div class="option-item" data-value="resultados">Melhorar meus resultados</div>
+      <div class="option-item" data-value="outro">Outro</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-top:28px">
+    <label class="form-label">Com quais ferramentas ou atividades você já trabalha? <span class="required">*</span></label>
+    <p style="font-size:12px;color:var(--gray-500);margin-bottom:12px">Selecione todas que se aplicam.</p>
+    <div class="checkbox-list" id="checkFerramentas">
+      <div class="checkbox-item" data-value="crm">CRM</div>
+      <div class="checkbox-item" data-value="excel">Excel</div>
+      <div class="checkbox-item" data-value="powerbi">Power BI</div>
+      <div class="checkbox-item" data-value="kpis">Indicadores de desempenho (KPIs)</div>
+      <div class="checkbox-item" data-value="gestao">Gestão Comercial</div>
+      <div class="checkbox-item" data-value="prospeccao">Prospecção</div>
+      <div class="checkbox-item" data-value="vendas">Vendas</div>
+      <div class="checkbox-item" data-value="nenhuma">Nenhuma das opções</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-top:28px">
+    <label class="form-label">Qual é o maior desafio que você enfrenta hoje na área comercial? <span class="required">*</span></label>
+    <textarea class="form-textarea" id="inputDesafio" placeholder="Conte com suas palavras. Pode ser curto, direto ao ponto."></textarea>
+    <div class="error-msg" id="errorDesafio">Compartilhe seu desafio.</div>
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+
+<!-- ===== STEP 4: COMPROMETIMENTO ===== -->
+<div class="screen" id="step4">
+  <span class="step-tag">PASSO 4 DE 7 · COMPROMETIMENTO</span>
+  <h2 class="step-title">Quem leva a sério,<br>colhe os resultados.</h2>
+  <p class="step-subtitle">Essa formação transforma carreiras — mas só funciona pra quem está comprometido de verdade. A gente quer saber: você está pronto?</p>
+
+  <div class="form-group">
+    <label class="form-label">Quando você pretende iniciar o curso? <span class="required">*</span></label>
+    <div class="option-list" id="optionsQuando">
+      <div class="option-item" data-value="imediato">Imediatamente</div>
+      <div class="option-item" data-value="7dias">Em até 7 dias</div>
+      <div class="option-item" data-value="30dias">Em até 30 dias</div>
+      <div class="option-item" data-value="apos30">Após 30 dias</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-top:28px">
+    <label class="form-label">Por que este é o momento certo para investir na sua formação? <span class="required">*</span></label>
+    <textarea class="form-textarea" id="inputPorque" placeholder="Fale de coração. O que te trouxe até aqui hoje?"></textarea>
+    <div class="error-msg" id="errorPorque">Conte pra gente.</div>
+  </div>
+
+  <div class="form-group" style="margin-top:28px">
+    <label class="form-label">Qual é o seu nível de prioridade para fazer este investimento? <span class="required">*</span></label>
+    <div class="range-wrapper">
+      <div class="range-value" id="rangeValue">5</div>
+      <input type="range" min="0" max="10" value="5" class="range-slider" id="rangePrioridade">
+      <div class="range-labels">
+        <span>0 — Baixa</span>
+        <span>10 — Máxima</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+<!-- ===== STEP 5: INVESTIMENTO ===== -->
+<div class="screen" id="step5">
+  <span class="step-tag">PASSO 5 DE 7 · INVESTIMENTO</span>
+  <h2 class="step-title">Como você quer<br>participar?</h2>
+  <p class="step-subtitle">Escolha o formato que cabe na sua rotina e a forma de pagamento. Sem surpresas — só clareza.</p>
+
+  <div class="form-group">
+    <label class="form-label">Em qual modalidade você pretende participar? <span class="required">*</span></label>
+    <div class="option-list" id="optionsModalidade">
+      <div class="option-item" data-value="online">Online</div>
+      <div class="option-item" data-value="presencial">Presencial</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-top:28px">
+    <label class="form-label">Como você pretende realizar o pagamento? <span class="required">*</span></label>
+    <div class="option-list" id="optionsPagamento">
+      <div class="option-item" data-value="pix">PIX à vista</div>
+      <div class="option-item" data-value="parcelado">Parcelado</div>
+      <div class="option-item" data-value="empresa">A empresa irá investir na minha formação</div>
+      <div class="option-item" data-value="avaliando">Ainda estou avaliando</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-top:28px">
+    <label class="form-label">Se sua aplicação for aprovada, quando pretende iniciar? <span class="required">*</span></label>
+    <div class="option-list" id="optionsInicio">
+      <div class="option-item" data-value="imediato">Imediatamente</div>
+      <div class="option-item" data-value="30dias">Nos próximos 30 dias</div>
+      <div class="option-item" data-value="60dias">Nos próximos 60 dias</div>
+      <div class="option-item" data-value="naodefini">Ainda não defini</div>
+    </div>
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+
+<!-- ===== STEP 6: PERGUNTA FINAL ===== -->
+<div class="screen" id="step6">
+  <span class="step-tag">PASSO 6 DE 7 · REFLEXÃO</span>
+  <h2 class="step-title">Última pergunta.<br>E a mais importante.</h2>
+  <p class="step-subtitle">Feche os olhos por um segundo e imagine: você domina a análise comercial. Seu chefe te reconhece. Seu salário dobra. As empresas disputam você. Agora responda:</p>
+
+  <div class="info-box">
+    <strong>💡 Pense com calma.</strong> Sua resposta mostra pra gente — e pra você mesmo — o tamanho da sua ambição.
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">O que mudaria na sua carreira se você dominasse a análise comercial e se tornasse uma referência dentro da sua empresa? <span class="required">*</span></label>
+    <textarea class="form-textarea" id="inputMudanca" placeholder="Escreva aqui o que viria na sua mente. Pode ser longo, pode ser curto. Só seja verdadeiro." style="min-height:140px"></textarea>
+    <div class="error-msg" id="errorMudanca">Compartilhe sua visão.</div>
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+
+<!-- ===== STEP 7: CONFIRMAÇÃO / ENVIO ===== -->
+<div class="screen" id="step7">
+  <span class="step-tag">PASSO 7 DE 7 · CONFIRMAÇÃO</span>
+  <h2 class="step-title">Tudo pronto.<br>Só falta você confirmar.</h2>
+
+  <div class="info-box">
+    <strong>🎯 O que acontece agora:</strong> sua aplicação entra em análise. Se você for aprovado, nossa equipe entra em contato pelo WhatsApp em até 48 horas com os próximos passos.
+  </div>
+
+  <div class="pain-card" style="margin-top:16px">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    </div>
+    <div>
+      <h4>Vagas limitadas</h4>
+      <p>A formação aceita um número limitado de profissionais por turma. Quem envia a aplicação primeiro, tem prioridade.</p>
+    </div>
+  </div>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+    </div>
+    <div>
+      <h4>Processo seletivo</h4>
+      <p>Analisamos cada aplicação individualmente. Buscamos profissionais comprometidos com resultado.</p>
+    </div>
+  </div>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    </div>
+    <div>
+      <h4>Sem compromisso financeiro agora</h4>
+      <p>Sua aplicação é gratuita. Você só decide sobre o investimento depois de aprovado.</p>
+    </div>
+  </div>
+
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Dados seguros · Criptografia SSL · Sem spam</span>
+  </div>
+</div>
+
+</div><!-- /.container -->
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav" id="bottomNav">
+  <button class="btn-back" id="btnBack" style="visibility:hidden">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    Voltar
+  </button>
+  <button class="btn-next" id="btnNext" disabled>
+    <span id="btnNextText">CONTINUAR</span>
+    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+  </button>
+</div>
+<!-- ============================================= -->
+<!-- ===== LANDING PAGE (aparece após envio) ===== -->
+<!-- ============================================= -->
+<div class="landing-page" id="landingPage">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">FORMAÇÃO PROFISSIONAL</div>
+  <h1>
+    ANALISTA
+    <span>COMERCIAL</span>
+  </h1>
+  <p class="hero-sub">
+    Você trabalha duro todo dia, mas seu salário não muda. A formação que transforma profissionais comuns em analistas comerciais disputados pelo mercado.
+  </p>
+  <button class="hero-cta" onclick="document.getElementById('modulesSection').scrollIntoView({behavior:'smooth'})">
+    VER O QUE VOU APRENDER
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFF"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+  </button>
+</section>
+
+<!-- DOR / REALIDADE -->
+<section class="section">
+  <div class="section-divider"></div>
+  <span class="section-tag">A VERDADE QUE NINGUÉM TE FALA</span>
+  <h2 class="section-title">Você merece mais.<br>Mas o mercado <span class="text-red">não te preparou.</span></h2>
+  <p class="section-subtitle">
+    No Brasil, milhões de profissionais trabalham 8, 10, 12 horas por dia — e continuam ganhando o mesmo. Você se reconhece aqui?
+  </p>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+    </div>
+    <div>
+      <h4>Salário travado em R$ 2 mil</h4>
+      <p>Você dá o seu melhor todo dia, mas no fim do mês o dinheiro mal paga as contas. Sem qualificação, seu salário não sobe.</p>
+    </div>
+  </div>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+    </div>
+    <div>
+      <h4>Trabalho pesado, reconhecimento zero</h4>
+      <p>Você carrega o time nas costas, resolve problemas, atende clientes difíceis — mas na hora da promoção, escolhem outro. Isso dói.</p>
+    </div>
+  </div>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    </div>
+    <div>
+      <h4>Medo de ficar pra trás</h4>
+      <p>O mercado muda rápido. Quem não se qualifica, perde espaço. Você sente que o tempo está passando e as oportunidades escapam.</p>
+    </div>
+  </div>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    </div>
+    <div>
+      <h4>Sem diploma que abre portas</h4>
+      <p>Você quer crescer, mas não tem uma certificação que prove seu valor. Empresas pedem qualificação — e você fica de fora das melhores vagas.</p>
+    </div>
+  </div>
+
+  <div class="pain-card">
+    <div class="pain-icon">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+    </div>
+    <div>
+      <h4>Não sabe usar dados a seu favor</h4>
+      <p>Empresas pagam mais pra quem entende números. Se você não domina dados e indicadores, fica invisível na hora das decisões.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPORTUNIDADE -->
+<section class="section" style="padding-top:0">
+  <div class="opportunity-banner">
+    <h3>🚀 Essa é a sua <span class="text-red">virada de chave</span>.</h3>
+    <p>Enquanto a maioria dos profissionais continua no mesmo lugar, fazendo a mesma coisa, ganhando o mesmo salário — <strong>você escolheu agir.</strong> A formação de Analista Comercial coloca você no caminho mais rápido para ganhar mais, crescer na carreira e se tornar indispensável.</p>
+  </div>
+</section>
+<!-- MÓDULOS -->
+<section class="section" id="modulesSection">
+  <div class="section-divider"></div>
+  <span class="section-tag">O QUE VOCÊ VAI DOMINAR</span>
+  <h2 class="section-title">8 Módulos que mudam<br>o rumo da sua <span class="text-red">carreira</span></h2>
+  <p class="section-subtitle">
+    Cada módulo te entrega uma habilidade nova. Você aplica no trabalho já no dia seguinte — e seu chefe percebe a diferença.
+  </p>
+
+  <!-- MÓDULO 1 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">01</div>
+      <h3>Fundamentos da Análise Comercial</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Entenda o papel do analista comercial e como os dados viram informações poderosas. Você sai deste módulo sabendo interpretar números que antes pareciam confusos.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>O papel do analista comercial</li>
+              <li>Dados, informação e conhecimento</li>
+              <li>Como a análise impacta o funil de vendas</li>
+              <li>Principais indicadores e métricas comerciais</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Habilidades desenvolvidas</h5>
+            <ul>
+              <li>Interpretar dados e gerar insights</li>
+              <li>Identificar oportunidades e gargalos</li>
+              <li>Apoiar decisões com base em dados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 2 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">02</div>
+      <h3>Comportamento do Cliente e Inteligência de Mercado</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Descubra como o cliente pensa, o que ele sente e por que ele compra. Quando você entende o cliente, você vende mais — simples assim.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>Comportamento de compra do cliente</li>
+              <li>Perfis de clientes e jornadas de decisão</li>
+              <li>Necessidades, dores e desejos</li>
+              <li>Segmentação e público-alvo</li>
+              <li>Fontes de pesquisa e geração de insights</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Habilidades desenvolvidas</h5>
+            <ul>
+              <li>Pensamento analítico e contexto</li>
+              <li>Pesquisa e análise crítica</li>
+              <li>Identificação de padrões e oportunidades</li>
+              <li>Recomendações baseadas em dados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 3 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">03</div>
+      <h3>Inteligência de Dados e Indicadores Comerciais</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Aprenda a ler dashboards, entender KPIs e falar a linguagem dos números. Esse módulo te separa do profissional comum — você passa a enxergar o que ninguém vê.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>Importância dos dados na gestão comercial</li>
+              <li>Tipos de dados e fontes disponíveis</li>
+              <li>Como coletar e organizar dados</li>
+              <li>Indicadores essenciais para análise</li>
+              <li>Decisão baseada em evidências</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Tópicos principais</h5>
+            <ul>
+              <li>KPIs: vendas, conversão, ticket médio, CAC, LTV</li>
+              <li>Dashboards e relatórios de performance</li>
+              <li>Análise de tendências e padrões</li>
+              <li>Ferramentas e planilhas para análise</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 4 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">04</div>
+      <h3>Pesquisa e Análise de Mercado</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Desenvolva a capacidade de pesquisar o mercado, analisar concorrentes e identificar tendências antes de todo mundo. Quem chega primeiro, ganha mais.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>Importância da pesquisa de mercado</li>
+              <li>Ambiente e comportamento do consumidor</li>
+              <li>Tendências e oportunidades</li>
+              <li>Ferramentas de pesquisa confiáveis</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Tópicos principais</h5>
+            <ul>
+              <li>Pesquisa primária e secundária</li>
+              <li>Análise de concorrentes</li>
+              <li>Segmentação de mercado</li>
+              <li>Análise SWOT aplicada</li>
+              <li>Tendências e inovação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MÓDULO 5 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">05</div>
+      <h3>Gestão do Funil de Vendas e Conversão</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Entenda cada etapa do funil de vendas. Saiba exatamente onde os clientes somem e como trazer mais gente pro fechamento. Essa habilidade vale ouro.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>O que é funil de vendas e sua importância</li>
+              <li>Etapas: atração, qualificação, proposta, negociação e fechamento</li>
+              <li>Como mapear e analisar o funil atual</li>
+              <li>Métricas de cada etapa</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Tópicos principais</h5>
+            <ul>
+              <li>Jornada do cliente e pontos de contato</li>
+              <li>Lead scoring e qualificação</li>
+              <li>Análise de conversão por etapa</li>
+              <li>Identificação de gargalos e perdas</li>
+              <li>Boas práticas para otimizar o funil</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 6 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">06</div>
+      <h3>Relacionamento com Clientes e Pós-Venda Estratégico</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Aprenda a conquistar o cliente de verdade. Não apenas vender — mas fazer ele voltar, indicar e virar fã do seu trabalho. Isso muda tudo.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>Importância do relacionamento no ciclo de vendas</li>
+              <li>Experiência do cliente e percepção de valor</li>
+              <li>Confiança e conexão genuína</li>
+              <li>Estratégias de fidelização e retenção</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Tópicos principais</h5>
+            <ul>
+              <li>Jornada: antes, durante e depois da compra</li>
+              <li>Comunicação eficaz e empática</li>
+              <li>Gestão de objeções no pós-venda</li>
+              <li>Programas de fidelidade e recompra</li>
+              <li>Transformando clientes em promotores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 7 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">07</div>
+      <h3>Planejamento Comercial e Gestão de Resultados</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Planeje ações comerciais como um estrategista. Defina metas, acompanhe indicadores e mostre resultados pro seu chefe. Esse módulo te coloca no radar das promoções.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>Importância do planejamento comercial</li>
+              <li>Definição de metas e objetivos</li>
+              <li>Indicadores de desempenho (KPIs)</li>
+              <li>Acompanhamento e análise de resultados</li>
+              <li>Ciclo de melhoria contínua</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Tópicos principais</h5>
+            <ul>
+              <li>Metodologias de planejamento</li>
+              <li>Definição de metas SMART</li>
+              <li>Indicadores: vendas, conversão, ticket médio</li>
+              <li>Ferramentas de controle</li>
+              <li>Relatórios e reuniões de performance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 8 -->
+  <div class="module-card">
+    <div class="module-header" onclick="toggleModule(this)">
+      <div class="module-number">08</div>
+      <h3>Apresentação de Resultados e Tomada de Decisão Estratégica</h3>
+      <div class="module-toggle"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg></div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <p class="module-desc">
+          Aprenda a apresentar resultados de forma clara e impactante. Quando você fala a linguagem dos líderes, eles te enxergam como um deles. Esse módulo abre portas.
+        </p>
+        <div class="module-grid">
+          <div class="module-col">
+            <h5>O que você aprende</h5>
+            <ul>
+              <li>Comunicação de resultados</li>
+              <li>Apresentações impactantes</li>
+              <li>Storytelling com dados</li>
+              <li>Recomendações e planos de ação</li>
+              <li>Suporte à decisão estratégica</li>
+            </ul>
+          </div>
+          <div class="module-col">
+            <h5>Tópicos principais</h5>
+            <ul>
+              <li>Relatórios executivos</li>
+              <li>Dashboards e visualizações eficazes</li>
+              <li>Análise crítica e recomendações</li>
+              <li>Reuniões de apresentação</li>
+              <li>Decisão baseada em dados</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- JORNADA -->
+<section class="section">
+  <div class="section-divider"></div>
+  <span class="section-tag">SUA JORNADA DE TRANSFORMAÇÃO</span>
+  <h2 class="section-title">De onde você está<br>até onde você <span class="text-red">merece chegar</span></h2>
+  <p class="section-subtitle">
+    Passo a passo, você evolui. Sem enrolação. Sem teoria vazia. Tudo conectado com a sua realidade.
+  </p>
+
+  <div class="journey-step">
+    <div class="journey-num">01</div>
+    <div>
+      <h4>Diagnóstico e Conexão</h4>
+      <p>Entenda onde você está agora, mergulhe nos conceitos-chave e conecte o aprendizado à sua rotina de trabalho.</p>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="journey-num">02</div>
+    <div>
+      <h4>Aprendizagem Prática</h4>
+      <p>Conteúdos diretos, cases reais e atividades práticas que desenvolvem habilidades que você usa já no dia seguinte.</p>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="journey-num">03</div>
+    <div>
+      <h4>Análise e Aplicação</h4>
+      <p>Analise dados de verdade, construa insights e aplique ferramentas que geram decisões mais inteligentes.</p>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="journey-num">04</div>
+    <div>
+      <h4>Estratégia e Execução</h4>
+      <p>Planeje ações comerciais, priorize oportunidades e execute com foco em resultados concretos.</p>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="journey-num">05</div>
+    <div>
+      <h4>Avaliação e Evolução</h4>
+      <p>Meça seus resultados, receba feedbacks e evolua continuamente. Você nunca mais vai ser o mesmo profissional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="section">
+  <div class="section-divider"></div>
+  <span class="section-tag">POR QUE ESSA FORMAÇÃO É DIFERENTE</span>
+  <h2 class="section-title">Feita pra quem quer<br><span class="text-red">resultado de verdade</span></h2>
+  <p class="section-subtitle">
+    Não é cursinho online que você assiste e esquece. É formação prática, com acompanhamento, certificação e resultado real no seu bolso.
+  </p>
+
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <h4>100% Prática</h4>
+      <p>Aprenda fazendo. Estudos de caso e simulações baseadas na realidade do mercado brasileiro.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+      </div>
+      <h4>Foco em Dados</h4>
+      <p>Domine números e indicadores. Profissionais que entendem dados ganham até 3x mais.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </div>
+      <h4>Mentores do Mercado</h4>
+      <p>Aprenda com quem vive a realidade comercial e compartilha experiências reais.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6v-4zm6-6h4v3h-4V7zM6 7h5v5H6V7zm6 4h4v6h-4v-6z"/></svg>
+      </div>
+      <h4>Ferramentas Reais</h4>
+      <p>Domine as ferramentas que as empresas usam. CRM, Excel, dashboards e mais.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg viewBox="0 0 24 24"><path d="M23 8c0 1.1-.9 2-2 2-.18 0-.35-.02-.51-.07l-3.56 3.55c.05.16.07.34.07.52 0 1.1-.9 2-2 2s-2-.9-2-2c0-.18.02-.36.07-.52l-2.55-2.55c-.16.05-.34.07-.52.07s-.36-.02-.52-.07l-4.55 4.56c.05.16.07.33.07.51 0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .35.02.51.07l4.56-4.55C8.02 9.36 8 9.18 8 9c0-1.1.9-2 2-2s2 .9 2 2c0 .18-.02.36-.07.52l2.55 2.55c.16-.05.34-.07.52-.07s.36.02.52.07l3.55-3.56C19.02 8.35 19 8.18 19 8c0-1.1.9-2 2-2s2 .9 2 2z"/></svg>
+      </div>
+      <h4>Visão Estratégica</h4>
+      <p>Entenda o negócio de ponta a ponta. Quem pensa estratégico, cresce mais rápido.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      </div>
+      <h4>Certificação</h4>
+      <p>Certificado reconhecido que comprova suas competências e abre portas no mercado.</p>
+    </div>
+  </div>
+</section>
+<!-- RESULTADO ESPERADO -->
+<section class="section">
+  <div class="section-divider"></div>
+  <span class="section-tag">O QUE MUDA NA SUA VIDA</span>
+  <h2 class="section-title">Depois da formação,<br><span class="text-red">você será capaz de:</span></h2>
+  <p class="section-subtitle">
+    Imagine chegar no trabalho amanhã com essas habilidades. Seu chefe nota. Seus colegas percebem. As oportunidades aparecem.
+  </p>
+
+  <div class="result-item">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+    <div>
+      <h4>Pensar estrategicamente</h4>
+      <p>Compreender o negócio como um todo e enxergar o que ninguém vê.</p>
+    </div>
+  </div>
+  <div class="result-item">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+    <div>
+      <h4>Dominar dados e indicadores</h4>
+      <p>Transformar números em insights que geram mais vendas e mais dinheiro no seu bolso.</p>
+    </div>
+  </div>
+  <div class="result-item">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg></div>
+    <div>
+      <h4>Gerenciar o funil de vendas</h4>
+      <p>Dominar todas as etapas, otimizar processos e aumentar a conversão.</p>
+    </div>
+  </div>
+  <div class="result-item">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+    <div>
+      <h4>Conquistar clientes de verdade</h4>
+      <p>Construir relacionamentos sólidos que geram valor pra você e pra empresa.</p>
+    </div>
+  </div>
+  <div class="result-item">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+    <div>
+      <h4>Tomar decisões inteligentes</h4>
+      <p>Priorizar ações e mostrar resultados que garantem promoção e reconhecimento.</p>
+    </div>
+  </div>
+  <div class="result-item">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><path d="M23 8c0 1.1-.9 2-2 2-.18 0-.35-.02-.51-.07l-3.56 3.55c.05.16.07.34.07.52 0 1.1-.9 2-2 2s-2-.9-2-2c0-.18.02-.36.07-.52l-2.55-2.55c-.16.05-.34.07-.52.07s-.36-.02-.52-.07l-4.55 4.56c.05.16.07.33.07.51 0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .35.02.51.07l4.56-4.55C8.02 9.36 8 9.18 8 9c0-1.1.9-2 2-2s2 .9 2 2c0 .18-.02.36-.07.52l2.55 2.55c.16-.05.34-.07.52-.07s.36.02.52.07l3.55-3.56C19.02 8.35 19 8.18 19 8c0-1.1.9-2 2-2s2 .9 2 2z"/></svg></div>
+    <div>
+      <h4>Gerar resultados consistentes</h4>
+      <p>Contribuir diretamente pro crescimento da empresa — e ser recompensado por isso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATOS -->
+<section class="section">
+  <div class="section-divider"></div>
+  <span class="section-tag">ESCOLHA SEU CAMINHO</span>
+  <h2 class="section-title">Duas formas de<br><span class="text-red">mudar sua vida</span></h2>
+  <p class="section-subtitle">Escolha o formato que cabe na sua rotina. Os dois te levam pro mesmo lugar: uma carreira que dá orgulho.</p>
+
+  <div class="format-card">
+    <div class="format-badge">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+      ONLINE
+    </div>
+    <h3>8 Encontros Online</h3>
+    <p>Formação completa ao vivo. Estude de casa, do trabalho, de onde quiser. Flexibilidade total sem perder qualidade.</p>
+    <div class="format-features">
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Aulas ao vivo</div>
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Suporte completo</div>
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Ferramentas incluídas</div>
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Certificado</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="format-badge">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      PRESENCIAL
+    </div>
+    <h3>2 Dias de Imersão</h3>
+    <p>Experiência intensiva presencial. Networking estratégico, prática intensa e vivências que aceleram sua evolução em 10x.</p>
+    <div class="format-features">
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Imersão total</div>
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Networking</div>
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Mentoria direta</div>
+      <div class="format-feat"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Certificado</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ESCASSEZ + AGENDAMENTO + CTA WHATSAPP     -->
+<!-- ========================================= -->
+<section class="section" id="agendamentoSection">
+  <div class="section-divider"></div>
+
+  <!-- ESCASSEZ BANNER -->
+  <div style="background:linear-gradient(135deg,rgba(255,0,64,0.15),rgba(255,0,64,0.05));border:2px solid var(--red-light);border-radius:var(--radius-lg);padding:20px;text-align:center;margin-bottom:32px;animation:pulseGlow 2s infinite">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--red-primary);color:var(--white);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:99px;margin-bottom:12px">
+      🔴 VAGAS QUASE ESGOTADAS
+    </div>
+    <h3 style="font-size:22px;font-weight:900;margin-bottom:8px">Restam apenas <span class="text-red" id="vagasCount">4 vagas</span> nesta turma.</h3>
+    <p style="font-size:14px;color:var(--gray-300);line-height:1.5">As vagas são preenchidas por ordem de aplicação. Quem agenda primeiro, garante o lugar. Não deixe pra depois.</p>
+  </div>
+
+  <span class="section-tag">ÚLTIMO PASSO</span>
+  <h2 class="section-title">Agende sua reunião<br>e <span class="text-red">garanta sua vaga</span></h2>
+  <p class="section-subtitle">Escolha o melhor dia e horário. Nossa equipe vai te atender pelo WhatsApp para confirmar sua vaga.</p>
+
+  <!-- DIA DA REUNIÃO -->
+  <div class="form-group">
+    <label class="form-label">Qual o melhor dia para a reunião? <span class="required">*</span></label>
+    <div class="option-list" id="optionsDia">
+      <div class="option-item" data-value="Segunda-feira">Segunda-feira</div>
+      <div class="option-item" data-value="Terça-feira">Terça-feira</div>
+      <div class="option-item" data-value="Quarta-feira">Quarta-feira</div>
+      <div class="option-item" data-value="Quinta-feira">Quinta-feira</div>
+      <div class="option-item" data-value="Sexta-feira">Sexta-feira</div>
+      <div class="option-item" data-value="Sábado">Sábado</div>
+    </div>
+  </div>
+
+  <!-- HORÁRIO DA REUNIÃO -->
+  <div class="form-group" style="margin-top:24px">
+    <label class="form-label">Qual o melhor horário? <span class="required">*</span></label>
+    <div class="option-list" id="optionsHora">
+      <div class="option-item" data-value="09:00">09:00</div>
+      <div class="option-item" data-value="10:00">10:00</div>
+      <div class="option-item" data-value="11:00">11:00</div>
+      <div class="option-item" data-value="12:00">12:00</div>
+      <div class="option-item" data-value="13:00">13:00</div>
+      <div class="option-item" data-value="14:00">14:00</div>
+      <div class="option-item" data-value="15:00">15:00</div>
+      <div class="option-item" data-value="16:00">16:00</div>
+      <div class="option-item" data-value="17:00">17:00</div>
+      <div class="option-item" data-value="18:00">18:00</div>
+      <div class="option-item" data-value="19:00">19:00</div>
+      <div class="option-item" data-value="20:00">20:00</div>
+    </div>
+  </div>
+
+  <!-- URGÊNCIA -->
+  <div style="background:var(--bg-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:16px;margin-top:24px;display:flex;align-items:flex-start;gap:12px">
+    <div style="font-size:24px">⚡</div>
+    <div>
+      <p style="font-size:13px;font-weight:700;margin-bottom:4px">Resposta rápida garantida</p>
+      <p style="font-size:12px;color:var(--gray-400);line-height:1.5">Nossa equipe responde no WhatsApp em até 5 minutos durante o horário comercial (seg a sáb, 9h às 20h).</p>
+    </div>
+  </div>
+
+  <!-- BOTÃO CTA WHATSAPP -->
+  <div style="margin-top:32px;text-align:center">
+    <button class="hero-cta" id="btnWhatsApp" style="width:100%;padding:20px;font-size:17px;opacity:0.4;pointer-events:none" disabled>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="#FFF" style="margin-right:4px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      GARANTIR MINHA VAGA
+    </button>
+    <p style="font-size:11px;color:var(--gray-500);margin-top:10px">Você será redirecionado para o WhatsApp com todas as informações preenchidas.</p>
+  </div>
+
+  <!-- CONTADOR DE VAGAS COM URGÊNCIA -->
+  <div style="margin-top:24px;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,0,64,0.08);border:1px solid rgba(255,0,64,0.2);border-radius:99px;padding:10px 20px">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--red-light);animation:pulse 1.5s infinite"></div>
+      <span style="font-size:13px;font-weight:600;color:var(--gray-200)"><span class="text-red" style="font-weight:800">4 pessoas</span> estão visualizando esta página agora</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA FINAL REFORÇO -->
+<section class="final-cta">
+  <div class="section-divider"></div>
+  <h2>Você chegou até aqui.<br>Isso já te separa de <span class="text-red">90% das pessoas.</span></h2>
+  <p>A maioria sonha. Poucos agem. Não perca essa oportunidade — as vagas acabam rápido e a próxima turma pode demorar meses.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 ALIAR Cursos e Soluções Empresariais. Todos os direitos reservados.</p>
+  <p style="margin-top:4px">Formação Analista Comercial — Sua carreira nunca mais será a mesma.</p>
+</footer>
+
+</div><!-- /.landing-page -->
+<style>
+@keyframes pulseGlow{
+0%,100%{box-shadow:0 0 15px rgba(255,0,64,0.1)}
+50%{box-shadow:0 0 30px rgba(255,0,64,0.25)}
+}
+</style>
+
+<script>
+(function(){
+  const totalSteps = 7;
+  let currentStep = 1;
+  const answers = {};
+
+  const progressFill = document.getElementById('progressFill');
+  const stepLabel = document.getElementById('stepLabel');
+  const circles = [];
+  for(let i=1;i<=totalSteps;i++) circles.push(document.getElementById('circle'+i));
+  const screens = [];
+  for(let i=1;i<=totalSteps;i++) screens.push(document.getElementById('step'+i));
+  const btnNext = document.getElementById('btnNext');
+  const btnNextText = document.getElementById('btnNextText');
+  const btnBack = document.getElementById('btnBack');
+  const bottomNav = document.getElementById('bottomNav');
+  const progressWrapper = document.getElementById('progressWrapper');
+  const landingPage = document.getElementById('landingPage');
+
+  updateUI();
+  setupRadioGroups();
+  setupCheckboxes();
+  setupFormInputs();
+  setupRange();
+  setupAgendamento();
+
+  // === RADIO GROUPS ===
+  function setupRadioGroups(){
+    const groups = ['optionsTempo','optionsRegime','optionsObjetivo',
+                    'optionsQuando','optionsModalidade','optionsPagamento','optionsInicio'];
+    groups.forEach(gid=>{
+      const el = document.getElementById(gid);
+      if(!el) return;
+      const items = el.querySelectorAll('.option-item');
+      items.forEach(item=>{
+        item.addEventListener('click',function(){
+          items.forEach(i=>i.classList.remove('selected'));
+          this.classList.add('selected');
+          answers[gid] = this.getAttribute('data-value');
+          validateCurrentStep();
+        });
+      });
+    });
+  }
+
+  // === CHECKBOXES ===
+  function setupCheckboxes(){
+    const el = document.getElementById('checkFerramentas');
+    if(!el) return;
+    const items = el.querySelectorAll('.checkbox-item');
+    items.forEach(item=>{
+      item.addEventListener('click',function(){
+        if(this.getAttribute('data-value')==='nenhuma'){
+          items.forEach(i=>i.classList.remove('selected'));
+          this.classList.add('selected');
+        }else{
+          el.querySelector('[data-value="nenhuma"]')?.classList.remove('selected');
+          this.classList.toggle('selected');
+        }
+        const sel = el.querySelectorAll('.checkbox-item.selected');
+        answers.ferramentas = Array.from(sel).map(s=>s.getAttribute('data-value'));
+        validateCurrentStep();
+      });
+    });
+  }
+
+  // === FORM INPUTS ===
+  function setupFormInputs(){
+    const inputs = document.querySelectorAll('.form-input,.form-textarea,.form-select');
+    inputs.forEach(input=>{
+      input.addEventListener('input',()=>validateCurrentStep());
+      input.addEventListener('change',()=>validateCurrentStep());
+    });
+    const phone = document.getElementById('inputPhone');
+    if(phone){
+      phone.addEventListener('input',function(e){
+        let v=e.target.value.replace(/\D/g,'');
+        if(v.length>11) v=v.slice(0,11);
+        if(v.length>6) v='('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
+        else if(v.length>2) v='('+v.slice(0,2)+') '+v.slice(2);
+        else if(v.length>0) v='('+v;
+        e.target.value=v;
+        validateCurrentStep();
+      });
+    }
+  }
+
+  // === RANGE ===
+  function setupRange(){
+    const slider = document.getElementById('rangePrioridade');
+    const display = document.getElementById('rangeValue');
+    if(slider && display){
+      slider.addEventListener('input',function(){
+        display.textContent=this.value;
+        answers.prioridade=this.value;
+        validateCurrentStep();
+      });
+      answers.prioridade=slider.value;
+    }
+  }
+
+  // === AGENDAMENTO (landing page) ===
+  function setupAgendamento(){
+    const diaContainer = document.getElementById('optionsDia');
+    const horaContainer = document.getElementById('optionsHora');
+    const btnWhats = document.getElementById('btnWhatsApp');
+    if(!diaContainer||!horaContainer||!btnWhats) return;
+
+    let diaSelected = false;
+    let horaSelected = false;
+
+    // Dia click
+    diaContainer.querySelectorAll('.option-item').forEach(item=>{
+      item.addEventListener('click',function(){
+        diaContainer.querySelectorAll('.option-item').forEach(i=>i.classList.remove('selected'));
+        this.classList.add('selected');
+        answers.diaReuniao = this.getAttribute('data-value');
+        diaSelected = true;
+        checkAgendamento();
+      });
+    });
+
+    // Hora click
+    horaContainer.querySelectorAll('.option-item').forEach(item=>{
+      item.addEventListener('click',function(){
+        horaContainer.querySelectorAll('.option-item').forEach(i=>i.classList.remove('selected'));
+        this.classList.add('selected');
+        answers.horaReuniao = this.getAttribute('data-value');
+        horaSelected = true;
+        checkAgendamento();
+      });
+    });
+
+    function checkAgendamento(){
+      if(diaSelected && horaSelected){
+        btnWhats.disabled = false;
+        btnWhats.style.opacity = '1';
+        btnWhats.style.pointerEvents = 'auto';
+      }
+    }
+
+    // WhatsApp click
+    btnWhats.addEventListener('click',function(){
+      const nome = answers.name || 'Não informado';
+      const telefone = answers.phone || 'Não informado';
+      const cargo = answers.cargo || 'Não informado';
+      const prioridade = answers.prioridade || 'Não informado';
+      const mudanca = answers.mudanca || 'Não informado';
+      const dia = answers.diaReuniao || 'Não informado';
+      const hora = answers.horaReuniao || 'Não informado';
+
+      const msg = `🔴 *NOVA APLICAÇÃO — FORMAÇÃO ANALISTA COMERCIAL*
+
+━━━━━━━━━━━━━━━━━━━━━
+📋 *DADOS DO CANDIDATO*
+━━━━━━━━━━━━━━━━━━━━━
+
+👤 *Nome:* ${nome}
+📱 *Telefone:* ${telefone}
+💼 *Cargo atual:* ${cargo}
+🎯 *Prioridade (0 a 10):* ${prioridade}/10
+
+━━━━━━━━━━━━━━━━━━━━━
+💬 *O QUE MUDARIA NA CARREIRA:*
+━━━━━━━━━━━━━━━━━━━━━
+
+"${mudanca}"
+
+━━━━━━━━━━━━━━━━━━━━━
+📅 *REUNIÃO AGENDADA*
+━━━━━━━━━━━━━━━━━━━━━
+
+📆 *Dia:* ${dia}
+🕐 *Horário:* ${hora}
+
+━━━━━━━━━━━━━━━━━━━━━
+
+Olá! Acabei de me aplicar para a Formação de Analista Comercial e gostaria de confirmar minha reunião. Aguardo o retorno! 🚀`;
+
+      const phoneNumber = '5585943768061';
+      const encoded = encodeURIComponent(msg);
+      const url = `https://wa.me/${phoneNumber}?text=${encoded}`;
+      window.open(url,'_blank');
+    });
+  }
+
+  // === VALIDATION ===
+  function validateCurrentStep(){
+    let valid = false;
+    switch(currentStep){
+      case 1:
+        const name=document.getElementById('inputName').value.trim();
+        const phone=document.getElementById('inputPhone').value.replace(/\D/g,'');
+        const email=document.getElementById('inputEmail').value.trim();
+        const city=document.getElementById('inputCity').value.trim();
+        const state=document.getElementById('inputState').value;
+        valid=name.length>=2&&phone.length>=10&&email.includes('@')&&email.includes('.')&&city.length>=2&&state!=='';
+        break;
+      case 2:
+        const cargo=document.getElementById('inputCargo').value.trim();
+        const empresa=document.getElementById('inputEmpresa').value.trim();
+        const tempo=document.querySelector('#optionsTempo .option-item.selected');
+        const regime=document.querySelector('#optionsRegime .option-item.selected');
+        valid=cargo.length>=2&&empresa.length>=2&&tempo&&regime;
+        break;
+      case 3:
+        const objetivo=document.querySelector('#optionsObjetivo .option-item.selected');
+        const ferramentas=document.querySelectorAll('#checkFerramentas .checkbox-item.selected');
+        const desafio=document.getElementById('inputDesafio').value.trim();
+        valid=objetivo&&ferramentas.length>0&&desafio.length>=5;
+        break;
+      case 4:
+        const quando=document.querySelector('#optionsQuando .option-item.selected');
+        const porque=document.getElementById('inputPorque').value.trim();
+        valid=quando&&porque.length>=5;
+        break;
+      case 5:
+        const modalidade=document.querySelector('#optionsModalidade .option-item.selected');
+        const pagamento=document.querySelector('#optionsPagamento .option-item.selected');
+        const inicio=document.querySelector('#optionsInicio .option-item.selected');
+        valid=modalidade&&pagamento&&inicio;
+        break;
+      case 6:
+        const mudanca=document.getElementById('inputMudanca').value.trim();
+        valid=mudanca.length>=10;
+        break;
+      case 7:
+        valid=true;
+        break;
+    }
+    btnNext.disabled=!valid;
+  }
+
+  // === NAVIGATION ===
+  btnNext.addEventListener('click',goNext);
+  btnBack.addEventListener('click',goBack);
+
+  function goNext(){
+    if(btnNext.disabled) return;
+    if(currentStep===7){
+      answers.name=document.getElementById('inputName').value.trim();
+      answers.phone=document.getElementById('inputPhone').value.trim();
+      answers.email=document.getElementById('inputEmail').value.trim();
+      answers.city=document.getElementById('inputCity').value.trim();
+      answers.state=document.getElementById('inputState').value;
+      answers.linkedin=document.getElementById('inputLinkedin').value.trim();
+      answers.cargo=document.getElementById('inputCargo').value.trim();
+      answers.empresa=document.getElementById('inputEmpresa').value.trim();
+      answers.desafio=document.getElementById('inputDesafio').value.trim();
+      answers.porque=document.getElementById('inputPorque').value.trim();
+      answers.mudanca=document.getElementById('inputMudanca').value.trim();
+
+      console.log('📋 Aplicação completa:',answers);
+
+      screens.forEach(s=>{s.classList.remove('active');s.style.display='none'});
+      bottomNav.style.display='none';
+      progressWrapper.style.display='none';
+      landingPage.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+      return;
+    }
+    if(currentStep<totalSteps){
+      currentStep++;
+      updateUI();
+    }
+  }
+
+  function goBack(){
+    if(currentStep>1){
+      currentStep--;
+      updateUI();
+    }
+  }
+
+  function updateUI(){
+    screens.forEach((s,i)=>{
+      s.classList.remove('active');
+      if(i===currentStep-1) s.classList.add('active');
+    });
+    const pct=((currentStep-1)/(totalSteps-1))*100;
+    progressFill.style.width=pct+'%';
+    stepLabel.textContent='Passo '+currentStep+' de '+totalSteps;
+    circles.forEach((c,i)=>{
+      c.classList.remove('active','done');
+      if(i<currentStep-1) c.classList.add('done');
+      else if(i===currentStep-1) c.classList.add('active');
+    });
+    btnBack.style.visibility=currentStep>1?'visible':'hidden';
+    btnNextText.textContent=currentStep===7?'ENVIAR MINHA APLICAÇÃO':'CONTINUAR';
+    validateCurrentStep();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+})();
+
+function toggleModule(header){
+  header.parentElement.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
